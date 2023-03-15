@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/authenticate.css";
 import useLogin from "../hooks/useLogin";
 
@@ -8,16 +8,16 @@ const Login = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const { error, loading, login } = useLogin();
+  const navigate = useNavigate()
 
   const handleSubmit = async(e: any) => {
     e.preventDefault();
     await login(username, password);
-  
-    console.log(error);
   };
 
   return (
     <>
+      {error && <div className="error">{ <p>{error.message}</p>}</div>}
       <form className="form" onSubmit={handleSubmit}>
         <h3>
           Welcome Back<span>Login to your account</span>
@@ -47,7 +47,6 @@ const Login = () => {
           <Link to="/sign_up">New Here? Sign up</Link>
         </p>
       </form>
-      {error && <p>{error.message}</p>}
     </>
   );
 };

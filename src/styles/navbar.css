@@ -13,6 +13,15 @@ nav {
   box-shadow: 0 50px 15px rgba(0, 0, 0, 0.03);
 }
 
+nav a {
+  color: #fff;
+  text-decoration: none !important;
+}
+
+nav a :hover{
+  color: white;
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -22,6 +31,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin:0 auto;
 }
 
 #navbar li {
@@ -37,6 +47,10 @@ a {
   color: white;
   transition: 0.3s ease-in-out;
   cursor: pointer;
+}
+
+li p{
+  margin: 0 auto;
 }
 
 #navbar li a:hover {

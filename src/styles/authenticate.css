@@ -89,22 +89,22 @@
     cursor: pointer;
 }
 
-.redirect li{
-    cursor: pointer;
+.error{
+    position: absolute;
+    width: 430px;
+    height: 30px;
+    border: 2px solid rgb(140, 27, 27);
+    background: rgba(246, 138, 138, 0.909);
+    border-radius: 4px;
+    transform: translate(-50%,-50%);
+    color: rgb(57, 4, 4);;
+    top: 15%;
+    left: 50%;
+    text-align: center;
 }
 
-@media screen and (max-width:400px){
-    .form{
-        width: 300px;
-        margin-top: 25px;
-    }
-    .redirect{
-        font-size: 12px;
-    }
-
-    .form button{
-        margin-top: 15px;
-    }
+.redirect li{
+    cursor: pointer;
 }
 
 @media screen and (max-width:420px){
@@ -121,9 +121,32 @@
     } 
 }
 
-@media screen and (max-width: 300px) {
+
+@media screen and (max-width:400px){
     .form{
-        width: fit-content;
+        height: 500px;
+        width: 300px;
+        top: 53%;
+    }
+
+    .error{
+        margin-top: 10px;
+        width: 250px;
+    }
+
+    .redirect{
+        font-size: 12px;
+    }
+
+    .form button{
+        margin-top: 15px;
+    }
+}
+
+
+@media screen and (max-height:800px) {
+    .form{
+        margin-top: 30px;
     }
 }
 
@@ -131,6 +154,9 @@
    form{
     width: 340px;
     height: 500px;
-   }     
+    
+   }    
+   .error{
+    width: 300px;
+   } 
 }
-

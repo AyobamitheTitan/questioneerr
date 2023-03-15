@@ -16,18 +16,19 @@ const Navbar = () => {
 
   const hide = () => {
     const hideSideBar = document.getElementById("navbar")
-    hideSideBar?.className 
-    console.log(hideSideBar);
+    hideSideBar?.classList.remove("active")
+    setTheClick()
   }
 
   const exit = () => {
     logout(); 
+    hide()
   };
 
   return (
     <>
       <nav>
-        <Link to="/">
+        <Link to="/dashboard">
           <h2>Questioneer</h2>
         </Link>
         <div>
@@ -35,10 +36,10 @@ const Navbar = () => {
             {token && (
               <>
                 <li>
-                  <Link to="#">Home</Link>
+                  <Link to="" onClick={hide}>Home</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard">Dashboard</Link>
+                  <Link to="/dashboard" onClick={hide}>Dashboard</Link>
                 </li>
               </>
             )}

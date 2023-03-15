@@ -18,6 +18,7 @@ const Signup = () => {
    
   return (
     <>
+      {error && <div className="error">{<p>{error.message}</p>}</div>}
       <form className="form signup" onSubmit={handleSubmit}>
         <h3>
           Welcome<span>Create an account</span>
@@ -55,7 +56,7 @@ const Signup = () => {
           <Link to="/login">Already have an account? Login</Link>
         </p>
       </form>
-      {error && <p>{error.message}</p>}
+      
     </>
   );
 };

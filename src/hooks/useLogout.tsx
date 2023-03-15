@@ -5,8 +5,9 @@ const useLogout = () => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
-    localStorage.removeItem("answered");
-    localStorage.removeItem("quiz");
+    sessionStorage.removeItem("answered");
+    sessionStorage.removeItem("quiz");
+    sessionStorage.removeItem("score");
     dispatch({ type: "LOGOUT" });
   };
 

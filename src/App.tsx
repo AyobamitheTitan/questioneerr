@@ -1,12 +1,12 @@
 import Navbar from "./components/Navbar"
 import { BrowserRouter as Router, Routes,Route, Navigate } from "react-router-dom"
-import Home from './pages/Home'
 import Login from "./components/Login"
 import Signup from "./components/Signup";
 import useAuthContext from "./hooks/useAuthContext";
 import Dashboard from "./pages/Dashboard";
 import QuizComponent from "./components/QuizComponent";
 import ChooseQuiz from "./pages/ChooseQuiz";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   const {token} = useAuthContext()
@@ -21,6 +21,7 @@ const App = () => {
             <Route path="/sign_up" element={!token ? <Signup /> : <Navigate to='/dashboard'/>} />
             <Route path="/dashboard" element={token ? <Dashboard/> : <Navigate to='/login'/>}/>
             <Route path="/new_quiz" element={!token ? <Login/> :<ChooseQuiz/>}/>
+            <Route path="/start_quiz" element= {!token ? <Login/> : <QuizComponent/>}/>
            </Routes>
         </Router>
       </>

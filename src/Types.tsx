@@ -3,7 +3,7 @@ type error = {
     message:string
 }
 
-type quiz = {
+interface quiz {
   category: string;
   id: string;
   correctAnswer: string;
@@ -16,4 +16,14 @@ type quiz = {
   isNiche:string
 };
 
-export type {error,quiz}
+interface client_quiz extends quiz{
+  score :number
+}
+
+type categories = {
+  id:number
+  value:string
+  name:string
+}
+
+export type {error,quiz,categories,client_quiz}

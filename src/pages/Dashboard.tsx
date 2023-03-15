@@ -4,6 +4,7 @@ import QuizSnippets from "../components/QuizSnippets";
 import useAuthContext from "../hooks/useAuthContext";
 import useLogout from "../hooks/useLogout";
 import { error, quiz } from "../Types";
+import '../styles/choice.css'
 
 const Dashboard = () => {
   const [length, setLength] = useState<number | null>(null);
@@ -40,7 +41,12 @@ const Dashboard = () => {
       <div className="quizes">
         {length ? (
           length > 0 ? (
-            quizes?.map((quiz) => <QuizSnippets clientQuiz={quiz} />)
+            <>
+              <Link to="/new_quiz">Start a new quiz</Link>
+              {quizes?.map((quiz) => (
+                <QuizSnippets key={quiz.id} clientQuiz={quiz} />
+              ))}
+            </>
           ) : (
             <>
               <p>You have no quizes yet</p>
