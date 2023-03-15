@@ -95,14 +95,15 @@
 }
 .correct-answer {
   margin-right: 4%;
+}
+.correct-answer h6{
   color: rgb(17, 236, 17);
 }
-
 
 @media screen and (max-width:688px) {
   .quiz_snippet{
     display: flex;
-    width: 100%;
+    width: 98%;
   }
   .difficult{
     display: none;
