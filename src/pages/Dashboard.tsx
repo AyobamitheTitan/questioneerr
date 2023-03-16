@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import QuizSnippets from "../components/QuizSnippets";
 import useAuthContext from "../hooks/useAuthContext";
 import useLogout from "../hooks/useLogout";
-import { error, quiz } from "../Types";
+import { client_quiz, error, quiz } from "../Types";
 import '../styles/choice.css'
 
 const Dashboard = () => {
@@ -44,7 +44,7 @@ const Dashboard = () => {
             <>
               <Link to="/new_quiz">Start a new quiz</Link>
               {quizes?.map((quiz) => (
-                <QuizSnippets key={quiz.id} clientQuiz={quiz} />
+                <QuizSnippets key={quiz.id} clientQuiz={quiz as client_quiz} />
               ))}
             </>
           ) : (
