@@ -3,7 +3,7 @@ import useAuthContext from "./useAuthContext";
 
 const useQuizer = () => {
     const {token} = useAuthContext()
-    const [loading,setLoading] = useState<boolean>(false)
+    const [loading,setLoading] = useState<boolean>(true)
 
     const get_quiz_string = (categories:string|null,difficulty:string|null):string => { 
         let quiz_string = ""
@@ -37,8 +37,6 @@ const useQuizer = () => {
     const getQuizes = async (categories:string|null,difficulty:string|null) => {
         sessionStorage.removeItem('quiz')
         const quiz_string = get_quiz_string(categories,difficulty);
-
-        setLoading(true)
         // !!!TODO : Handle delayed responses from the server
         const getFromApi = await fetch(quiz_string);
         

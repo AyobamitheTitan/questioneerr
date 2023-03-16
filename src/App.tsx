@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   const {token} = useAuthContext()
+
     return (
       <>
         <Router>
@@ -20,7 +21,7 @@ const App = () => {
             <Route path="/login" element={!token ? <Login /> : <Navigate to='/dashboard'/>} />
             <Route path="/sign_up" element={!token ? <Signup /> : <Navigate to='/dashboard'/>} />
             <Route path="/dashboard" element={token ? <Dashboard/> : <Navigate to='/login'/>}/>
-            <Route path="/new_quiz" element={!token ? <Login/> :<ChooseQuiz/>}/>
+            <Route path="/new_quiz" element={!token ? <Login/> : <ChooseQuiz/>}/>
             <Route path="/start_quiz" element= {!token ? <Login/> : <QuizComponent/>}/>
            </Routes>
         </Router>
