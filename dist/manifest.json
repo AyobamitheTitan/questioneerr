@@ -1,14 +1,14 @@
 {
-  "src/main.css": {
-    "file": "assets/main-5d84e501.css",
-    "src": "src/main.css"
+  "index.css": {
+    "file": "assets/index-5d84e501.css",
+    "src": "index.css"
   },
-  "src/main.tsx": {
+  "index.html": {
     "css": [
-      "assets/main-5d84e501.css"
+      "assets/index-5d84e501.css"
     ],
-    "file": "assets/main-751a442f.js",
+    "file": "assets/index-c8ab840f.js",
     "isEntry": true,
-    "src": "src/main.tsx"
+    "src": "index.html"
   }
 }
