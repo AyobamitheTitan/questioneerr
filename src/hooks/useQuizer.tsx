@@ -20,14 +20,23 @@ const useQuizer = () => {
     }
 
     const toServer = async (question:string,correctAnswer:string,score:number,category:string,difficulty:string) => {
-        const response = await fetch("/api/v1/quiz", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ question, correctAnswer, score, category,difficulty }),
-        }); 
+        const response = await fetch(
+          "https://questioneer-web-service.onrender.com/api/v1/quiz",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              question,
+              correctAnswer,
+              score,
+              category,
+              difficulty,
+            }),
+          }
+        ); 
         if (!response.ok) {
            console.log("Mess up o");    
         }

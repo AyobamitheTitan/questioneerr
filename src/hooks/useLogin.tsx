@@ -11,13 +11,16 @@ const useLogin = () => {
 
   const login = async (username: string, password: string) => {
     setIsLoading(true);
-    const response = await fetch("api/v1/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
+    const response = await fetch(
+      "https://questioneer-web-service.onrender.com/api/v1/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      }
+    );
 
     const json = await response.json();
     console.log(json)
