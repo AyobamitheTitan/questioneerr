@@ -4,11 +4,11 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/questioneerr/",
-  server: {
-    proxy: {
-      "/api": "https://questioneer-web-service.onrender.com",
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     "/api": "https://questioneer-web-service.onrender.com",
+  //   },
+  // },
   build: {
     // generate manifest.json in outDir
     manifest: true,
