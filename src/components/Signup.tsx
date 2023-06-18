@@ -15,7 +15,7 @@ const Signup = () => {
     console.log(error);
     
    }
-   
+  
   return (
     <>
       {error && <div className="error">{<p>{error.message}</p>}</div>}
@@ -51,12 +51,11 @@ const Signup = () => {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Sign up</button>
+        <button disabled={loading as boolean}>Sign up</button>
         <p className="redirect">
           <Link to="/login">Already have an account? Login</Link>
         </p>
       </form>
-      
     </>
   );
 };

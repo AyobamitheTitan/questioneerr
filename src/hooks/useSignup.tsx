@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import { error } from "../Types"
 import useAuthContext from "./useAuthContext"
+import environment from "../environment"
 
 const useSignup = () => {
     const [error,setError] = useState<error | null>(null)
@@ -12,7 +13,7 @@ const useSignup = () => {
     const signup = async(username:string,email:string,password:string) => {
         setIsLoading(true)
         const response = await fetch(
-          "https://questioneer-web-service.onrender.com/api/v1/signup",
+          `${environment.uri}/api/v1/signup`,
           {
             method: "POST",
             headers: {

@@ -12,6 +12,8 @@ const Login = () => {
 
   const handleSubmit = async(e: any) => {
     e.preventDefault();
+    console.log('click');
+    
     await login(username, password);
   };
 
@@ -42,7 +44,7 @@ const Login = () => {
           required
         />
 
-        <button>Login</button>
+        <button disabled={loading as boolean}>Login</button>
         <p className="redirect">
           <Link to="/sign_up">New Here? Sign up</Link>
         </p>
