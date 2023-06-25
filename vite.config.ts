@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "https://ayobamithetitan.github.io/questioneerr/",
+  base: "/",
   server: {
     proxy: {
       "/api": "https://questioneer-web-service.onrender.com",
