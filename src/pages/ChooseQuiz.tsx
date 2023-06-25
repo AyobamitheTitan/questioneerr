@@ -31,12 +31,12 @@ const ChooseQuiz = () => {
     // setCategories([...checked])
     if (checked.length === 0) {
       getQuizes(null, selectedRadio);
-      navigate("/start_quiz");
+      navigate("/questioneerr/start_quiz");
 
       return;
     }
     getQuizes(checked.join(","), selectedRadio);
-    navigate("/start_quiz");
+    navigate("/questioneerr/start_quiz");
   };
 
   return (

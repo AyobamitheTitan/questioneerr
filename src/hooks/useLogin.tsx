@@ -38,7 +38,7 @@ const useLogin = () => {
       dispatch({ type: "LOGIN", payload: {token,username} });
       console.log(token,username);
       setError(null);
-      navigate("/dashboard")
+      navigate("/questioneerr/dashboard");
     }
   };
   return { error, loading, login };

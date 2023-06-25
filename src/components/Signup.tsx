@@ -53,7 +53,7 @@ const Signup = () => {
         />
         <button disabled={loading as boolean}>Sign up</button>
         <p className="redirect">
-          <Link to="/login">Already have an account? Login</Link>
+          <Link to="/questioneerr/login">Already have an account? Login</Link>
         </p>
       </form>
     </>

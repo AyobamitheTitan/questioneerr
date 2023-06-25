@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <Link to="/dashboard">
+        <Link to="/questioneerr/dashboard">
           <h2>Questioneer</h2>
         </Link>
         <div>
@@ -36,16 +36,16 @@ const Navbar = () => {
             {token && (
               <>
                 <li>
-                  <Link to="" onClick={hide}>Home</Link>
+                  <Link to="/" onClick={hide}>Home</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard" onClick={hide}>Dashboard</Link>
+                  <Link to="/questioneerr/dashboard" onClick={hide}>Dashboard</Link>
                 </li>
               </>
             )}
             <li className="action">
               {token && <p onClick={exit}>Logout</p>}
-              {!token && <Link to='/login' onClick={hide}>Login</Link>}
+              {!token && <Link to='/questioneerr/login' onClick={hide}>Login</Link>}
             </li>
           </ul>
         </div>

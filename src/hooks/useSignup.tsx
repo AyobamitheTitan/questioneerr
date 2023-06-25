@@ -33,7 +33,7 @@ const useSignup = () => {
             localStorage.setItem('token',json['token'])
             localStorage.setItem('username',json['username'])
             dispatch({type:'LOGIN',payload:{token:json['token'],username:json['username']}})
-            navigate("/dashboard")
+            navigate("/questioneerr/dashboard");
         }
     }
     return {error,loading,signup}

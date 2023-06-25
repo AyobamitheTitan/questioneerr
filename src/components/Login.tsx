@@ -19,7 +19,7 @@ const Login = () => {
 
   return (
     <>
-      {error && <div className="error">{ <p>{error.message}</p>}</div>}
+      {error && <div className="error">{<p>{error.message}</p>}</div>}
       <form className="form" onSubmit={handleSubmit}>
         <h3>
           Welcome Back<span>Login to your account</span>
@@ -46,7 +46,7 @@ const Login = () => {
 
         <button disabled={loading as boolean}>Login</button>
         <p className="redirect">
-          <Link to="/sign_up">New Here? Sign up</Link>
+          <Link to="/questioneerr/sign_up">New Here? Sign up</Link>
         </p>
       </form>
     </>

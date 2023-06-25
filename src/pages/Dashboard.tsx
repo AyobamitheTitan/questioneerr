@@ -5,6 +5,7 @@ import useAuthContext from "../hooks/useAuthContext";
 import useLogout from "../hooks/useLogout";
 import { client_quiz, error, quiz } from "../Types";
 import '../styles/choice.css'
+import environment from "../environment";
 
 const Dashboard = () => {
   const [length, setLength] = useState<number | null>(null);
@@ -18,7 +19,7 @@ const Dashboard = () => {
   }, []);
 
   const fetchQuiz = async () => {
-    const response = await fetch("/api/v1/quiz", {
+    const response = await fetch(`${environment.uri}/api/v1/quiz`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -42,7 +43,7 @@ const Dashboard = () => {
         {length ? (
           length > 0 ? (
             <>
-              <Link to="/new_quiz">Start a new quiz</Link>
+              <Link to="/questioneerr/new_quiz">Start a new quiz</Link>
               {quizes?.map((quiz) => (
                 <QuizSnippets key={quiz.id} clientQuiz={quiz as client_quiz} />
               ))}
@@ -50,13 +51,13 @@ const Dashboard = () => {
           ) : (
             <>
               <p>You have no quizes yet</p>
-              <Link to="/new_quiz">Start a new quiz</Link>
+              <Link to="/questioneerr/new_quiz">Start a new quiz</Link>
             </>
           )
         ) : (
           <>
             <p>You have no quizes yet</p>
-            <Link to="/new_quiz">Start a new quiz</Link>
+            <Link to="/questioneerr/new_quiz">Start a new quiz</Link>
           </>
         )}
       </div>

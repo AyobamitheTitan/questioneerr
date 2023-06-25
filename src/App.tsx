@@ -17,12 +17,12 @@ const App = () => {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="" element={token ? <Navigate to='/dashboard'/> : <Navigate to='/login'/>}/>
-            <Route path="/login" element={!token ? <Login /> : <Navigate to='/dashboard'/>} />
-            <Route path="/sign_up" element={!token ? <Signup /> : <Navigate to='/dashboard'/>} />
-            <Route path="/dashboard" element={token ? <Dashboard/> : <Navigate to='/login'/>}/>
-            <Route path="/new_quiz" element={!token ? <Login/> : <ChooseQuiz/>}/>
-            <Route path="/start_quiz" element= {!token ? <Login/> : <QuizComponent/>}/>
+            <Route path="" element={token ? <Navigate to='/questioneerr/dashboard'/> : <Navigate to='/questioneerr/login'/>}/>
+            <Route path="/questioneerr/login" element={!token ? <Login /> : <Navigate to='/dashboard'/>} />
+            <Route path="/questioneerr/sign_up" element={!token ? <Signup /> : <Navigate to='/dashboard'/>} />
+            <Route path="/questioneerr/dashboard" element={token ? <Dashboard/> : <Navigate to='/login'/>}/>
+            <Route path="/questioneerr/new_quiz" element={!token ? <Login/> : <ChooseQuiz/>}/>
+            <Route path="/questioneerr/start_quiz" element= {!token ? <Login/> : <QuizComponent/>}/>
             <Route path="*" element={<NotFound/>}/>
            </Routes>
         </Router>
