@@ -1,13 +1,13 @@
 {
   "index.css": {
-    "file": "assets/index-8a50c480.css",
+    "file": "assets/index-ced77e4e.css",
     "src": "index.css"
   },
   "index.html": {
     "css": [
-      "assets/index-8a50c480.css"
+      "assets/index-ced77e4e.css"
     ],
-    "file": "assets/index-4147cd2d.js",
+    "file": "assets/index-1eaf9a36.js",
     "isEntry": true,
     "src": "index.html"
   }
