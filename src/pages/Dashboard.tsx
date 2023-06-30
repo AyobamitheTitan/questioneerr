@@ -4,8 +4,9 @@ import QuizSnippets from "../components/QuizSnippets";
 import useAuthContext from "../hooks/useAuthContext";
 import useLogout from "../hooks/useLogout";
 import { client_quiz, error, quiz } from "../Types";
-import '../styles/choice.css'
 import environment from "../environment";
+import '../styles/styles.css'
+
 
 const Dashboard = () => {
   const [length, setLength] = useState<number | null>(null);
@@ -27,7 +28,6 @@ const Dashboard = () => {
     });
 
     const json = await response.json();
-    console.log(json);
     
     if (!response.ok && json["type"] == "TokenExpiredError") {
       setError({ message: json["message"], type: json["type"] });
@@ -38,15 +38,19 @@ const Dashboard = () => {
     setQuizes(json["quizes"]);
   };
   return (
-    <div>
-      <div className="quizes">
+      <div className="mt-2">
         {length ? (
           length > 0 ? (
             <>
-              <Link to="/questioneerr/new_quiz">Start a new quiz</Link>
-              {quizes?.map((quiz) => (
-                <QuizSnippets key={quiz.id} clientQuiz={quiz as client_quiz} />
+              <div className="text-center"><Link to="/questioneerr/new_quiz" className="text-white">Start a new quiz</Link></div>
+              <div className="">
+                {quizes?.map((quiz) => (
+                <div className="border mt-1">
+                  <QuizSnippets key={quiz.id} clientQuiz={quiz as client_quiz} />
+                </div>
               ))}
+              </div>
+              
             </>
           ) : (
             <>
@@ -61,7 +65,6 @@ const Dashboard = () => {
           </>
         )}
       </div>
-    </div>
   );
 };
 

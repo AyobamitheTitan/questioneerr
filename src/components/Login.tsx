@@ -8,7 +8,6 @@ const Login = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const { error, loading, login } = useLogin();
-  const navigate = useNavigate()
 
   const handleSubmit = async(e: any) => {
     e.preventDefault();
@@ -44,7 +43,7 @@ const Login = () => {
           required
         />
 
-        <button disabled={loading as boolean}>Login</button>
+        <button disabled={loading as boolean}>{loading == true ? 'Verifying...' : 'Login'}</button>
         <p className="redirect">
           <Link to="/questioneerr/sign_up">New Here? Sign up</Link>
         </p>

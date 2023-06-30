@@ -12,7 +12,6 @@ const Signup = () => {
   const handleSubmit = async(e:any) => {
     e.preventDefault()
     await signup(username,email,password)
-    console.log(error);
     
    }
   
@@ -51,7 +50,7 @@ const Signup = () => {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button disabled={loading as boolean}>Sign up</button>
+        <button disabled={loading as boolean}>{loading == false ? 'Verifying...' : 'Signup'}</button>
         <p className="redirect">
           <Link to="/questioneerr/login">Already have an account? Login</Link>
         </p>

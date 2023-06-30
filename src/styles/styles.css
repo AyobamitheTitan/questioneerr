@@ -1,0 +1,14 @@
+.snippet-flex{
+    display: flex;
+}
+
+.q-head{
+    margin: 0;
+    padding: 0;
+    width: 45%;
+}
+
+.a-flex{
+    margin-left: 6%;
+    flex: 1;
+}
