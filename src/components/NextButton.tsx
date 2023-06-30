@@ -18,7 +18,6 @@ const NextButton = ({
   next: any;
   done: boolean;
 }) => {
-  const { toServer } = useQuizer();
   const whenClicked = () => {
     let curr = Number(sessionStorage.getItem("answered") as unknown);
     let score = Number(sessionStorage.getItem("score") as unknown);
@@ -57,7 +56,7 @@ const NextButton = ({
           onClick={() => {
             whenClicked();
             if (done) {
-              navigate("/dashboard");
+              navigate("/questioneerr/dashboard");
             }
           }}
         >
